@@ -6,7 +6,9 @@ let repoSchema = mongoose.Schema({
   user_name: String,
   user_id: Number,
   repo_id: Number,
-  repo_name: String,
+  repo_name: {
+    type: String, unique : true, dropDups: true
+  }
   repos_url: String,
   forks_count: Number
 });

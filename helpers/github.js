@@ -2,7 +2,7 @@ const axios = require('axios');
 const config = require('../config.js');
 
 let getReposByUsername = (username) => {
-  console.log('username--->', username)
+  let repos = [];
   let options = {
     url: `https://api.github.com/users/${username}/repos`,
     headers: {
@@ -12,7 +12,7 @@ let getReposByUsername = (username) => {
   };
 
   axios.get(options.url, {headers: options.headers})
-   .then(res => {console.log('res--->', res)})
+   .then(res => {console.log('fetched user\'s repos')})
    .catch(err => {console.log('failed')})
 }
 
