@@ -1,5 +1,6 @@
 const axios = require('axios');
 const config = require('../config.js');
+const db = require('../database/index.js')
 
 let getReposByUsername = (username) => {
   let repos = [];
@@ -12,8 +13,11 @@ let getReposByUsername = (username) => {
   };
 
   axios.get(options.url, {headers: options.headers})
-   .then(res => {console.log('fetched user\'s repos')})
-   .catch(err => {console.log('failed')})
+   .then(res => {
+    console.log('fetched user\'s repos');
+    db.save(res.data);
+    })
+   .catch(err => {console.log('failed', err)})
 }
 
 
