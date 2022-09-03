@@ -24,11 +24,9 @@ class App extends React.Component {
       url: "/repos",
       data: JSON.stringify({username: term}),
       success: (result) => {
-        console.log('----------->', result)
         this.setState({
-          repos: result
-        })
-        console.log('i am resylt')
+          repos: JSON.parse(result)
+        });
       },
       error: (err) => {
         console.log('failed--->', err)

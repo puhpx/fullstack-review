@@ -47,5 +47,12 @@ let getTop25Reops = (cb) => {
       .exec(cb)
 }
 
+// let getUserRepos = (user, cb) => {
+//   return Repo.find({user_name: user})
+//       .limit(5)
+//       .exec(cb)
+// }
+
 module.exports.save = save;
 module.exports.getTop25Reops = getTop25Reops;
+// module.exports.getUserRepos = getUserRepos;

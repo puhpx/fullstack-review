@@ -12,12 +12,22 @@ let getReposByUsername = (username) => {
     }
   };
 
-  axios.get(options.url, {headers: options.headers})
+  return axios.get(options.url, {headers: options.headers})
    .then(res => {
-    console.log('fetched user\'s repos', res);
+    console.log('fetched user\'s repos');
     db.save(res.data);
+
+    return res.data
     })
    .catch(err => {console.log('failed$$$')})
+  //  .then((username) => {
+  //   console.log('dddd', username)
+  //   db.getUserRepos(username, (err, result) => {
+  //     if(err) throw err;
+  //     console.log('ahhahah', result)
+  //     return (result);
+  //   })
+  //  })
 }
 
 module.exports.getReposByUsername = getReposByUsername;
