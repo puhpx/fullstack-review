@@ -23,7 +23,13 @@ class App extends React.Component {
       type: "POST",
       url: "/repos",
       data: JSON.stringify({username: term}),
-      success: console.log('ajax post request sent'),
+      success: (result) => {
+        console.log('----------->', result)
+        this.setState({
+          repos: result
+        })
+        console.log('i am resylt')
+      },
       error: (err) => {
         console.log('failed--->', err)
       },

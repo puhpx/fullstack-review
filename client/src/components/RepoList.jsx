@@ -12,7 +12,9 @@ console.log('props--->', props),
       {props.top25Repos.map(repo => {
         return (
           <li key={repo._id}>
-          repo: {repo.repo_name} -------
+          repo:
+          <a href={repo.repos_url}>{repo.repo_name}</a>
+          -------
           forks: {repo.forks_count}
           </li>
         )

@@ -14,7 +14,7 @@ app.post('/repos', function (req, res) {
   // save the repo information in the database
 
   helpers.getReposByUsername(req.body.username),
-  res.end('DONE')
+  res.status(201).end()
 });
 
 app.get('/repos', function (req, res) {

@@ -27,7 +27,7 @@ let save = (repos) => {
       user_id: repo.owner.id,
       repo_id: repo.id,
       repo_name: repo.name,
-      repos_url: repo.repos_url,
+      repos_url: repo.svn_url,
       forks_count: repo.forks_count
     })
     eachRepo.save((err, data) => {

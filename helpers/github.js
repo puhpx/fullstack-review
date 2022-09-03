@@ -14,7 +14,7 @@ let getReposByUsername = (username) => {
 
   axios.get(options.url, {headers: options.headers})
    .then(res => {
-    console.log('fetched user\'s repos');
+    console.log('fetched user\'s repos', res);
     db.save(res.data);
     })
    .catch(err => {console.log('failed$$$')})
