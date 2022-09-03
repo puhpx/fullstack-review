@@ -22,7 +22,6 @@ let save = (repos) => {
   // the MongoDB
 
   repos.forEach((repo) => {
-    // console.log('%%%%------->', repo)
     var eachRepo = new Repo({
       user_name: repo.owner.login,
       user_id: repo.owner.id,
@@ -35,11 +34,18 @@ let save = (repos) => {
       if (err) {
         console.log('Save error: ');
       } else {
-        console.log('Data saved!', data);
-        // console.log(db.fetch.dataSize())
+        console.log('Data saved!');
       }
     });
   })
 }
 
+let getTop25Reops = (cb) => {
+  Repo.find()
+      .sort({forks_count: -1})
+      .limit(25)
+      .exec(cb)
+}
+
 module.exports.save = save;
+module.exports.getTop25Reops = getTop25Reops;

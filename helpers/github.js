@@ -20,6 +20,4 @@ let getReposByUsername = (username) => {
    .catch(err => {console.log('failed', err)})
 }
 
-
-
 module.exports.getReposByUsername = getReposByUsername;
