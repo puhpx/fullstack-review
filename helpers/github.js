@@ -17,7 +17,7 @@ let getReposByUsername = (username) => {
     console.log('fetched user\'s repos');
     db.save(res.data);
     })
-   .catch(err => {console.log('failed', err)})
+   .catch(err => {console.log('failed$$$')})
 }
 
 module.exports.getReposByUsername = getReposByUsername;

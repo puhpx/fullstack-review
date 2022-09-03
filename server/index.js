@@ -20,14 +20,12 @@ app.post('/repos', function (req, res) {
 app.get('/repos', function (req, res) {
   // TODO - your code here!
   // This route should send back the top 25 repos
-  // console.log('req', req.repos);
-  // console.log('res', res.repos);
-  console.log('i am hhhhhhh');
   db.getTop25Reops((err, result) => {
     if (err) {
       console.log('failed to get top 25 repos')
     } else {
-      console.log('top 25:::::', result)
+      console.log('fetched top 25 repos');
+      return res.status(200).send(result);
     }
   })
 });
