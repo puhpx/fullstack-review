@@ -27,6 +27,7 @@ class App extends React.Component {
         this.setState({
           repos: JSON.parse(result)
         });
+        this.fetchTopRepos();
       },
       error: (err) => {
         console.log('failed--->', err)
